@@ -1,0 +1,125 @@
+/*=============== CARD ===============*/
+.card{
+    display: grid;
+    place-items: center;
+    background: var(--body-gradient);
+    padding-block: 4.5rem;
+    
+    &__container{
+        margin-inline: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+    &__article{
+        position: relative;
+        background-color: var(--container-color);
+        padding: 2.5rem;
+        border-radius: 2rem;
+        text-align: center;
+        box-shadow: 0 20px 24px hsla(235, 32%, 15%, .2);
+        overflow: hidden;
+    }
+    &__img{
+        width: 250px;
+        margin-bottom: 1rem;
+        animation: float-img 2.5s ease-in-out infinite;
+    }
+    &__title{
+        color: var(--title-color);
+        font-size: var(--biggest-font-size);
+        line-height: 100%;
+        margin-bottom: 1rem;
+    }
+    &__description{
+        font-size: var(--normal-font-size);
+    }
+    &__data{
+        position: relative;
+        z-index: 10;
+    }
+    &__shapes{
+        display: grid;
+        justify-items: center;
+        row-gap: 2.5rem;
+        position: absolute;
+        inset: 0;
+        top: -3.5rem;
+        z-index: 1;
+    }
+    &__shape{
+        display: block;
+        width: 260px;
+        height: 40px;
+        background: var(--shape-gradient);
+        border-radius: 4rem;
+        transform: rotate(-24deg);
+        opacity: 0;
+        
+        &:nth-child(1){
+            animation-delay: .1s;
+        }
+        &:nth-child(2){
+            animation-delay: .2s;
+        }
+        &:nth-child(3){
+            animation-delay: .3s;
+        }
+        &:nth-child(4){
+            animation-delay: .4s;
+        }
+        &:nth-child(5){
+            animation-delay: .5s;
+        }
+        &:nth-child(6){
+            animation-delay: .6s;
+        }
+        &:nth-child(7){
+            animation-delay: .7s;
+        }
+        &:nth-child(8){
+            animation-delay: .8s;
+        }
+    }
+}
+
+/* Animation img */
+@keyframes float-img{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-.75rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* Animation shape */
+.card__article:hover .card__shape{
+    animation-name: shape-animate;
+    animation-duration: .8s;
+    animation-iteration-count: 2; /* infinite */
+}
+
+@keyframes shape-animate{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: .1;
+    }
+    40%{
+        opacity: .3;
+    }
+    60%{
+        opacity: .7;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
