@@ -1,9 +1,0 @@
-========== CARD ==========
-.card__title .card__description
-Shield & Shining Star
-
-Fire Light Sword
-
-Incoming Messages
-
-Beautiful card, with hover effects
